@@ -23,7 +23,7 @@ function displayProduct(product) {
   <p class="product-description">
    ${description}
   </p>
-  <div class="btn-group d-inline-flex">
+  <div class="btn-group d-inline-flex mt-3">
     <button class="btn btn-primary minus">
       <i class="bi bi-dash-lg"></i>
     </button>
@@ -33,7 +33,7 @@ function displayProduct(product) {
     </button>
   </div>
 
-  <button class="btn btn-primary d-inline-block ms-3 add-cart"data-id=${id}
+  <button class="btn btn-primary d-inline-block ms-3 add-cart mt-3"data-id=${id}
   data-bs-toggle="offcanvas"
   data-bs-target="#cart"
   aria-controls="offcanvasRight">
