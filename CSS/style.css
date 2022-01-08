@@ -229,7 +229,7 @@ end   navbar
 }
 @media (min-width: 992px) {
   .features-card {
-    height: 650px;
+    height: 650px !important;
     max-height: 650px;
   }
 }
