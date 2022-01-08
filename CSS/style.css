@@ -229,8 +229,8 @@ end   navbar
 }
 @media (min-width: 992px) {
   .features-card {
-    height: 580px;
-    max-height: 600px;
+    height: 650px;
+    max-height: 650px;
   }
 }
 
