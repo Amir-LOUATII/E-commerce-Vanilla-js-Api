@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap 5 css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- boostrap icons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <!--main css file  -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/about.css" />
+    <link rel="stylesheet" href="./CSS/products.css" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- javascript bootstrasp -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- main js file  -->
+    <script src="products.js" defer type="module"></script>
+    <title>Products | Online Shop</title>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-md navbar-light shadow-sm">
+      <div class="container-lg">
+        <button
+          type="button"
+          class="navbar-toggler rounded-pill bg-primary me-auto"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar-menu"
+        >
+          <span><i class="bi bi-list"></i></span>
+        </button>
+        <nav class="collapse navbar-collapse" id="navbar-content">
+          <ul class="navbar-nav justify-content-center me-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="About.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="products.html" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="navbar-brand">
+          <a href="index.html" class="logo h2 text-decoration-none text-primary"
+            >Online <span class="fw-bold fs-2 text-light">Shop</span>
+          </a>
+        </div>
+
+        <div
+          class="cart-icon position-relative"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart"
+          aria-controls="offcanvasRight"
+        >
+          <i class="bi bi-cart fs-5"></i>
+          <span
+            class="rounded-circle bg-primary position-absolute count-icon top-0 end-0 d-flex justify-content-center align-items-center text-light"
+            >0</span
+          >
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+    <!-- start sidebar menu -->
+    <div
+      class="offcanvas offcanvas-start mw-75"
+      tabindex="-1"
+      id="sidebar-menu"
+      aria-labelledby="offcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-group">
+          <li class="list-group-item border-0">
+            <a class="text-dark text-decoration-none fs-5" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="list-group-item border-0">
+            <a class="text-dark text-decoration-none fs-5" href="About.html"
+              >About</a
+            >
+          </li>
+          <li class="list-group-item border-0">
+            <a class="text-dark text-decoration-none fs-5" href="products.html"
+              >Products</a
+            >
+          </li>
+          <li class="list-group-item border-0">
+            <a
+              class="text-dark text-decoration-none fs-5"
+              href="index.html#contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--end sidebar menu -->
+    <!-- start cart -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="cart"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body py-5">
+        <h1 class="h5">Your Bag:</h1>
+        <h2 class="h5 cart-emty-msg">Your cart is empty</h2>
+        <div class="cart-content">
+          <!-- <article
+        class="row justify-content-start align-items-center border border-3 border-top-0 border-start-0 border-end-0"
+      >
+        <div class="col-4">
+          <img src="./images/1.jpg" alt="Product image" class="img-fluid" />
+        </div>
+        <div
+          class="col-8 ps-2 align-items-end d-flex justify-content-between align-items-center"
+        >
+          <div class="text d-inline-block">
+            <h1 class="fs-5 product-name-cart mb-0">Product 1</h1>
+            <p class="text-muted mb-1 cart-price">price$</p>
+            <span class="fs-6 fw-bold text-decoration-underline"
+              >Remove</span
+            >
+          </div>
+          <div
+            class="flex-column d-inline-flex justify-content-center align-items-end"
+          >
+            <button
+              type="button"
+              class="d-flex justify-content-center align-items-center text-primary btn cart-increase"
+            >
+              <i class="bi bi-chevron-compact-up"></i>
+            </button>
+            <button
+              type="button"
+              class="d-flex justify-content-center align-items-center btn cart-amount"
+            >
+              1
+            </button>
+            <button
+              type="button"
+              class="d-flex justify-content-center align-items-center btn text-primary cart-decrease"
+            >
+              <i class="bi bi-chevron-compact-down"></i>
+            </button>
+          </div>
+        </div>
+      </article> -->
+        </div>
+        <div class="cart-footer fw-bold fs-3 hide">Total: <span>20£</span></div>
+        <div class="w-100 position-relative">
+          <button class="btn-primary btn-lg d-block mx-auto hide checkout">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+    <!-- start hero  -->
+    <section class="hero py-5 fs-3">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+    <!-- end hero -->
+    <!-- start products -->
+
+    <section class="products py-5">
+      <div class="container-lg">
+        <div class="row gy-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="filters shadow border-1 p-3">
+              <div class="serach">
+                <form action="#" class="search-form">
+                  <div class="input-group">
+                    <input
+                      type="search"
+                      name="search"
+                      id="search"
+                      placeholder="Search ..."
+                      class="mw-100 form-control"
+                    />
+                    <button class="btn btn-primary search-btn" type="submit">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="category mt-3 pd-3">
+                <h1 class="h4 fw-bold">Categories</h1>
+                <ul class="list-group categories">
+                  <li class="list-group-item border-0 text-muted active">
+                    ALL
+                  </li>
+                  <li class="list-group-item border-0 text-muted">category1</li>
+                  <li class="list-group-item border-0 text-muted">category2</li>
+                  <li class="list-group-item border-0 text-muted">category3</li>
+                </ul>
+              </div>
+              <div class="price-range mt-3">
+                <h2 class="h4 fw-bold">Price</h2>
+                <form class="price-r">
+                  <input
+                    type="range"
+                    name="price"
+                    id="price"
+                    max="100"
+                    min="0"
+                    value="50"
+                    class="w-100"
+                  />
+                  <span
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="min text-muted">0</span>
+                    <span class="max text-muted">100</span>
+                  </span>
+                  <span class="value text-muted">value: 50$</span>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-9">
+            <div class="row gy-4 product-content">
+              <!-- <div class="col-12 col-md-6 col-xl-4">
+                <div class="card shadow features-card">
+                  <div class="card-body">
+                    <div class="card-img-top">
+                      <img
+                        class="card-img-top"
+                        src="./images/mobile.jpeg"
+                        alt="product iamges"
+                      />
+                    </div>
+                    <div
+                      class="card-title text-center h3 fw-normal text-muted mt-1"
+                    >
+                      Product1
+                    </div>
+                    <div class="card-text text-center">
+                      <span class="h4 text-center">99.99$</span>
+                    </div>
+                  </div>
+                  <div class="features-icons">
+                    <div
+                      class="f-icons d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        class="tt"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Add to cart"
+                        ><a href="#"
+                          ><i class="bi bi-plus-circle rounded-circle me-4"></i
+                        ></a>
+                      </span>
+                      <span
+                        class="tt"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Search product"
+                        ><a href="product.html?id='?'"
+                          ><i class="bi bi-search rounded-circle ms-4"></i
+                        ></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end product -->
+  </body>
+</html>

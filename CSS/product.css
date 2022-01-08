@@ -1,0 +1,20 @@
+/* start css variable */
+:root {
+  --main-transition: 0.3s;
+  --maincolor: #0d6efd;
+  --secondary-color: #d3ebfd;
+}
+/* end css variable */
+/* start product */
+.product .btn-group {
+  width: 180px;
+}
+
+.product .btn-group .btn {
+  width: 60px;
+}
+
+.product .btn-group .btn-light {
+  background-color: var(--secondary-color) !important;
+}
+/* end product */

@@ -1,0 +1,84 @@
+/* general rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: "kumbh sans", sans-serif;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*  css rules*/
+:root {
+  --main-transition: 0.3s;
+  --maincolor: #0d6efd;
+  --secondary-color: #d3ebfd;
+}
+/* 
+    ========
+    start  navbar
+    ======== 
+    */
+
+header {
+  position: relative !important;
+}
+header .container-lg .navbar-brand span {
+  color: black !important;
+}
+
+header .container-lg .nav-link {
+  color: black !important;
+}
+
+.cart-icon i {
+  color: black !important;
+}
+
+/* 
+    =============
+    start  navbar
+    ============= 
+    */
+
+/* 
+    ========
+    start  hero
+    ======== 
+    */
+
+.hero {
+  background-color: #f1f5f8;
+}
+/* 
+    ========
+    end hero
+    ======== 
+    */

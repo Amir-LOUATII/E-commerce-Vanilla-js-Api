@@ -1,0 +1,54 @@
+/* general rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: "kumbh sans", sans-serif;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*  css rules*/
+:root {
+  --main-transition: 0.3s;
+  --maincolor: #0d6efd;
+  --secondary-color: #d3ebfd;
+}
+
+/* start products */
+.list-group-item.active {
+  color: white !important;
+}
+
+input[type="search"] {
+  background-color: var(--secondary-color);
+  border: none;
+}
+/* end products */
