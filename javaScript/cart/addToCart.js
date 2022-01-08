@@ -5,21 +5,21 @@ import {
   setLocalStorage,
 } from "../utils.js";
 // select item
-let cart = getLocalStorage("cart");
 
 function addToCart(id, amt) {
+  let cart = getLocalStorage("cart");
   const item = cart.find((cartItem) => cartItem.id == id);
 
   if (!item) {
     const prod = findProduct(id);
-    console.log("reached");
     const product = { amount: amt, ...prod };
     cart.push(product);
     addToCartDOM(product);
     setLocalStorage("cart", cart);
+
     cartCount();
     cartTotal();
-  } else {
+  } else if (item) {
     item.amount += amt;
     const cartAmount = document.querySelectorAll(".cart-amount");
 
@@ -36,6 +36,8 @@ function addToCart(id, amt) {
   }
 }
 
+increaseCart();
+decreaseCart();
 function findProduct(id) {
   let store = getLocalStorage("store");
 
@@ -138,8 +140,6 @@ function addToCartDOM(product) {
   cartContent.appendChild(article);
   // select btns
   removeItem();
-  increaseCart();
-  decreaseCart();
 }
 
 // remove item from the cart
@@ -218,12 +218,14 @@ function decreaseCart() {
           });
         }
         setLocalStorage("cart", cart);
+        removeItem();
         cartCount();
         cartTotal();
       });
     });
   }
 }
+
 //cart
 function CartUnit() {
   const cart = getLocalStorage("cart");
@@ -231,5 +233,7 @@ function CartUnit() {
   cartTotal();
   cart.forEach((item) => addToCartDOM(item));
   removeItem();
+  increaseCart();
+  decreaseCart();
 }
 export { addToCart, CartUnit };

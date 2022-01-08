@@ -43,6 +43,9 @@ body {
 }
 
 /* start products */
+.list-group-item {
+  cursor: pointer;
+}
 .list-group-item.active {
   color: white !important;
 }
@@ -51,4 +54,18 @@ input[type="search"] {
   background-color: var(--secondary-color);
   border: none;
 }
+
+@media (max-width: 991px) {
+  .filters {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
 /* end products */
+/* start loader */
+.products-loader {
+  background-color: #f1f5f8;
+  z-index: 500;
+}
+/* end loader */

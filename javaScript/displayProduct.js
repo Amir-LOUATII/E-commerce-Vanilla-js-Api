@@ -2,7 +2,11 @@ import { formatPrice, getElement } from "./utils.js";
 import { addToCart } from "./cart/addToCart.js";
 
 function displayProduct(product) {
+  const loader = getElement(".product-loader");
+  loader.classList.add("hide");
   const { title, price, description, image, id } = product;
+  const bread = getElement(".target");
+  bread.textContent = `${title}`;
   const prod = getElement(".prod");
   prod.innerHTML = `  <div class="col-12 col-lg-6 px-3">
   <div>
@@ -45,7 +49,6 @@ function displayProduct(product) {
 
   // icrease amount
   plusBtn.addEventListener("click", function () {
-    console.log("clicked");
     amountBtn.textContent++;
   });
   // decrease amount
@@ -61,7 +64,6 @@ function displayProduct(product) {
     const amount = parseInt(amountBtn.textContent);
     if (amount) {
       const id = e.currentTarget.dataset.id;
-      console.log("clicked");
       addToCart(id, amount);
     }
   });

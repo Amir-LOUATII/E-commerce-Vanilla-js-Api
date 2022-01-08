@@ -1,3 +1,6 @@
+// global input
+import "./javaScript/tooltips.js";
+// specific import
 import { getElement } from "./javaScript/utils.js";
 import { getData } from "./javaScript/getData.js";
 import { displayProducts } from "./javaScript/displayProducts.js";
@@ -13,6 +16,9 @@ const products = getElement(".product-content");
 window.addEventListener("DOMContentLoaded", async function () {
   const data = await getData(url);
   displayProducts(data, products);
+  const loader = getElement(".products-loader");
+  loader.classList.add("hide");
+
   searchFilter(data);
   categoriesFilter(data);
   priceFilter(data);

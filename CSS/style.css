@@ -80,10 +80,15 @@ header .container-lg .nav-link:hover {
 /* end nav-links */
 
 /* cart icon  */
+.cart-icon {
+  cursor: pointer;
+}
+
 .cart-icon span {
   transform: translate(50%, -20%);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  padding: 2px;
 }
 
 .cart-icon i {
@@ -274,7 +279,25 @@ end   navbar
 .features .btn {
   width: fit-content !important;
 }
-/* 
+/* start loader */
+.load {
+  animation-name: spin;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* end loader */
+/*
+ 
   =================
   end featurres
   ================= 

@@ -18,3 +18,8 @@
   background-color: var(--secondary-color) !important;
 }
 /* end product */
+/* start loader */
+.product-loader {
+  background-color: #f1f5f8;
+}
+/* end loader */

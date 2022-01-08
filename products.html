@@ -221,8 +221,8 @@
     <section class="products py-5">
       <div class="container-lg">
         <div class="row gy-4">
-          <div class="col-sm-6 col-lg-3">
-            <div class="filters shadow border-1 p-3">
+          <div class="col-sm-12 col-lg-3">
+            <div class="filters shadow border-1 p-3 filters">
               <div class="serach">
                 <form action="#" class="search-form">
                   <div class="input-group">
@@ -268,7 +268,7 @@
                     <span class="min text-muted">0</span>
                     <span class="max text-muted">100</span>
                   </span>
-                  <span class="value text-muted">value: 50$</span>
+                  <span class="value text-muted text-center">value: 50$</span>
                 </form>
               </div>
             </div>
@@ -326,5 +326,15 @@
       </div>
     </section>
     <!-- end product -->
+    <!-- start loader -->
+    <div
+      class="products-loader align-items-center position-absolute top-0 left-0 d-flex justify-content-center w-100 h-100"
+    >
+      <h1 class="h1 text-primary">
+        Loading
+        <span class="ms-3 load"><i class="bi bi-arrow-repeat"></i></span>
+      </h1>
+    </div>
+    <!-- end loader  -->
   </body>
 </html>

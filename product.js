@@ -1,4 +1,6 @@
-import { getElement } from "./javaScript/utils.js";
+// global input
+import "./javaScript/tooltips.js";
+// specific import
 import { getData } from "./javaScript/getData.js";
 import { displayProduct } from "./javaScript/displayProduct.js";
 import { CartUnit } from "./javaScript/cart/addToCart.js";

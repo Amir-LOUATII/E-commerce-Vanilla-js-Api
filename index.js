@@ -1,3 +1,5 @@
+// global input
+import "./javaScript/tooltips.js";
 // spefic import
 import { getElement, setLocalStorage } from "./javaScript/utils.js";
 import { getData } from "./javaScript/getData.js";
