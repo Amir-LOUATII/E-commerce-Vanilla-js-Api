@@ -21,5 +21,6 @@
 /* start loader */
 .product-loader {
   background-color: #f1f5f8;
+  z-index: 999;
 }
 /* end loader */
