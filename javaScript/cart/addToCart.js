@@ -7,16 +7,22 @@ import {
 // select item
 
 function addToCart(id, amt) {
+  // get the cart from loacal storage
   let cart = getLocalStorage("cart");
+  // look for the product in the cart with his id
   const item = cart.find((cartItem) => cartItem.id == id);
-
+  // case:product is't in the cart
   if (!item) {
+    // getting product from the store
     const prod = findProduct(id);
     const product = { amount: amt, ...prod };
+    // adding prodcut to cart
     cart.push(product);
+    // adding product to the DOM
     addToCartDOM(product);
+    // update cart inj the localstorage
     setLocalStorage("cart", cart);
-
+    // update the count and total
     cartCount();
     cartTotal();
   } else if (item) {
