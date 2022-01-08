@@ -22,7 +22,12 @@ function searchFilter(data) {
       const filtredData = data.filter((item) => {
         return item.title.toLowerCase().startsWith(value.toLowerCase());
       });
-      displayProducts(filtredData, products);
+      if (filtredData.length > 0) {
+        displayProducts(filtredData, products);
+      } else {
+        const products = getElement(".product-content");
+        products.innerHTML = `<p class='text-center h1 lead text-muted text-capitalize' >Sorry there is no product with that name: ${value}</p>`;
+      }
     }
   });
 }
