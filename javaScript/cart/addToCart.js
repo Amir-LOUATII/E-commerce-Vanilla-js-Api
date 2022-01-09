@@ -20,6 +20,9 @@ function addToCart(id, amt) {
     cart.push(product);
     // adding product to the DOM
     addToCartDOM(product);
+    increaseCart();
+    decreaseCart();
+
     // update cart inj the localstorage
     setLocalStorage("cart", cart);
     // update the count and total
@@ -46,8 +49,6 @@ function addToCart(id, amt) {
   }
 }
 
-increaseCart();
-decreaseCart();
 // find product in the store
 function findProduct(id) {
   let store = getLocalStorage("store");
