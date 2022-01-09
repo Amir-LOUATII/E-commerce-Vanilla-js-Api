@@ -14,10 +14,11 @@ const url = "https://fakestoreapi.com/products";
 const products = getElement(".product-content");
 
 window.addEventListener("DOMContentLoaded", async function () {
-  const data = await getData(url);
+  const data = await getData(url).finally(() => {
+    const loader = getElement(".products-loader");
+    loader.classList.add("hide");
+  });
   displayProducts(data, products);
-  const loader = getElement(".products-loader");
-  loader.classList.add("hide");
 
   searchFilter(data);
   categoriesFilter(data);

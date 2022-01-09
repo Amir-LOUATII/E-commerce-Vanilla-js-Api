@@ -2,8 +2,6 @@ import { formatPrice, getElement } from "./utils.js";
 import { addToCart } from "./cart/addToCart.js";
 
 function displayProduct(product) {
-  const loader = getElement(".product-loader");
-  loader.classList.add("hide");
   const { title, price, description, image, id } = product;
   const bread = getElement(".target");
   bread.textContent = `${title}`;
@@ -65,6 +63,7 @@ function displayProduct(product) {
     if (amount) {
       const id = e.currentTarget.dataset.id;
       addToCart(id, amount);
+      amountBtn.textContent = 0;
     }
   });
 }

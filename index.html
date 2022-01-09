@@ -227,7 +227,19 @@
         <div class="text text-center h2 fw-bold">
           <span class="text-primary me-1">/</span>Features
         </div>
-        <div class="content">
+        <div
+          class="content position-relative d-flex justify-content-center align-items-center"
+        >
+          <div
+            class="features-loader position-absolute top-50 left-50 d-flex justify-content-center align-items-center"
+          >
+            <h1 class="h1 text-primary">
+              Loading
+              <span class="mx-3 text-center load"
+                ><i class="bi bi-arrow-repeat"></i
+              ></span>
+            </h1>
+          </div>
           <div
             class="row justify-content-center align-items-center gy-4 features-content"
           >
@@ -306,7 +318,11 @@
             </div>
           </div>
           <div class="from col-12 col-md-6 align-items-center py-5">
-            <form action="#">
+            <form action="#" class="contact-form">
+              <small class="text-dark">
+                The name should contains only one space
+                <span class="text-danger ms-3">(Required*)</span></small
+              >
               <div class="form-floating mb-3">
                 <input
                   type="text"
@@ -317,7 +333,16 @@
                   required
                 />
                 <label for="name" class="text-muted">Your Name</label>
+                <small class="name-error-msg text-danger hide"
+                  >The name must contains only one space</small
+                >
               </div>
+              <small>
+                We don't share your email adress with any other third-party<span
+                  class="text-danger ms-3"
+                  >(Required*)</span
+                ></small
+              >
               <div class="form-floating mb-3">
                 <input
                   type="email"
@@ -328,18 +353,34 @@
                   required
                 />
                 <label for="email" class="text-muted">Your Email</label>
+                <small class="text-danger email-error-msg hide"
+                  >Invalid email,please enter a valid email</small
+                >
               </div>
+              <small class="w-100"
+                >Phone number must contains only numbers
+                <span class="ms-3 text-danger d-inline-block"
+                  >(Required*)</span
+                ></small
+              >
               <div class="form-floating mb-3">
                 <input
                   type="text"
                   name="number"
-                  id="number"
+                  id="phone"
                   class="form-control"
                   placeholder="Your Phone Number"
                   required
                 />
-                <label for="name" class="text-muted">Your Phone Number</label>
+                <label for="phone" class="text-muted">Your Phone Number</label>
+                <small class="text-danger hide phone-error-msg"
+                  >Phone number must contains only numbers</small
+                >
               </div>
+              <small
+                >Request must not exceed 300 caracters (include spaces)
+                <span class="text-danger ms-3">(Required*)</span></small
+              >
               <div class="form-floating mb-3">
                 <textarea
                   name="subject"
@@ -348,10 +389,13 @@
                   class="form-control"
                 ></textarea>
                 <label for="text" class="text-muted">Your Request</label>
+                <small class="text-danger hide request-error-msg"
+                  >Request must not exceed 300 caracters (include spaces)</small
+                >
               </div>
               <button
                 type="submit"
-                class="btn btn-primary btn-lg d-block mx-auto"
+                class="btn btn-primary btn-lg d-block mx-auto d-block contact-btn"
               >
                 Send Request
               </button>
@@ -361,6 +405,5 @@
       </div>
     </section>
     <!-- end contact -->
-    <script></script>
   </body>
 </html>

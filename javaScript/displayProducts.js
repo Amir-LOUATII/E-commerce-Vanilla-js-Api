@@ -38,15 +38,13 @@ function displayProducts(data, section) {
               ><i class="bi bi-cart-plus rounded-circle me-4 "   
               data-bs-toggle="offcanvas"
               data-bs-target="#cart"
-              aria-controls="offcanvasRight"></i
-              
+              aria-controls="offcanvasRight"></i>
             </span>
             <span
               class="tt"
               data-bs-toggle="tooltip"
               data-bs-placement="top"
               title="Search product"
-              data-id=${id}
               ><a href="product.html?id=${id}"
                 ><i class="bi bi-search rounded-circle ms-4"></i
               ></a>
@@ -62,7 +60,11 @@ function displayProducts(data, section) {
   addBtns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       const id = e.currentTarget.dataset.id;
-      addToCart(id, 1);
+      e.preventDefault();
+      console.log(e.currentTarget);
+      if (id) {
+        addToCart(id, 1);
+      }
     });
   });
 }

@@ -41,6 +41,10 @@ body {
   --maincolor: #0d6efd;
   --secondary-color: #d3ebfd;
 }
+
+.hide {
+  display: none;
+}
 /* 
   ========
   start  navbar
@@ -222,6 +226,10 @@ end   navbar
   ================= 
   */
 
+.features .content {
+  min-height: 200px;
+}
+
 .features-card {
   position: relative;
   transition: var(--main-transition);
@@ -245,10 +253,12 @@ end   navbar
   position: absolute;
   width: 0;
   height: 0;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(211, 235, 253, 0.8);
   overflow: hidden;
+  transition: var(--main-transition);
 }
 
 .features-card .features-icons .f-icons {
@@ -281,6 +291,7 @@ end   navbar
 }
 /* start loader */
 .load {
+  display: block;
   animation-name: spin;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;

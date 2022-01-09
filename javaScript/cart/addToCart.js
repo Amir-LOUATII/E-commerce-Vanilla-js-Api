@@ -25,10 +25,13 @@ function addToCart(id, amt) {
     // update the count and total
     cartCount();
     cartTotal();
-  } else if (item) {
+  }
+  // case that the item is in the cart
+  else if (item) {
+    // update ythe amount in the cart
     item.amount += amt;
     const cartAmount = document.querySelectorAll(".cart-amount");
-
+    // update amount in theDOM
     if (cartAmount.length > 0) {
       cartAmount.forEach((amount) => {
         if (amount.dataset.id == item.id) {
@@ -36,6 +39,7 @@ function addToCart(id, amt) {
         }
       });
     }
+    // update cart localstorage
     setLocalStorage("cart", cart);
     cartCount();
     cartTotal();
@@ -44,6 +48,7 @@ function addToCart(id, amt) {
 
 increaseCart();
 decreaseCart();
+// find product in the store
 function findProduct(id) {
   let store = getLocalStorage("store");
 
@@ -155,7 +160,9 @@ function removeItem() {
     removeBtns.forEach((remove) => {
       remove.addEventListener("click", function (e) {
         const id = e.currentTarget.dataset.id;
+        // remove item from the DOM
         e.currentTarget.parentElement.parentElement.parentElement.remove();
+        // remove item from the local storage
         let cart = getLocalStorage("cart");
         const cartRemove = cart.filter((item) => {
           return item.id != id;
@@ -166,6 +173,7 @@ function removeItem() {
           emtyMsg.classList.remove("hide");
           cartCount();
         }
+        // update count and total values
         cartCount();
         cartTotal();
       });
