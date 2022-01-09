@@ -73,10 +73,11 @@ form.addEventListener("submit", function (e) {
 
   //   request validation
   const requestValue = requestInput.value;
-  if (requestValue.length > 0 && !requestValue.startsWith(" ")) {
-    if (requestValue.length < 300) {
-      requestValidation = true;
-    }
+  if (
+    requestValue.length > 0 &&
+    !requestValue.startsWith(" ") &&
+    requestValue.length < 300
+  ) {
   } else {
     requestValidation = false;
     requestErrMsg.classList.remove("hide");
